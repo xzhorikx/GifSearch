@@ -9,3 +9,6 @@ Make sure to set your GIPHY api key in `app/build.gradle` file
 ```
 def configGiphyApiKey = "\"ENTER_YOUR_GIPHY_KEY_HERE\"" // <----
 ```
+
+# Latest releases
+Can be found in `Releases` tab: https://github.com/xzhorikx/GifSearch/releases/tag/release
