@@ -203,7 +203,6 @@ fun GifGrid(
                 val lastVisibleId by remember {
                     derivedStateOf {
                         with(state.layoutInfo) {
-//                            state.layoutInfo.totalItemsCount - 1 == visibleItemsInfo.lastOrNull()?.index
                             (visibleItemsInfo.lastOrNull()?.key as? String).takeIf { it == (gifItem as? GifItem.Data)?.id }
                         }
                     }

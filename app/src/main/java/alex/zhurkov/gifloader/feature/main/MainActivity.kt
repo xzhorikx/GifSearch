@@ -61,7 +61,6 @@ class MainActivity : ComponentActivity() {
                             viewModel.dispatch(MainActivityAction.QueryChanged(it))
                         },
                         onLastGifVisible = {
-                            Timber.e("Last gif is visible: [${it}]")
                             viewModel.dispatch(MainActivityAction.LastVisibleGifChanged(it))
                         }
                     )

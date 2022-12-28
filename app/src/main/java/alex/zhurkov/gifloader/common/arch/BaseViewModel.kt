@@ -61,7 +61,6 @@ abstract class BaseViewModel<A : UIAction, C : UIStateChange, S : UIState, M : U
     }
 
     fun dispatch(action: A) {
-        Timber.e("Action received: [$action]")
         viewModelScope.launch(dispatcher) { actions.send(action) }
     }
 
@@ -81,7 +80,6 @@ abstract class BaseViewModel<A : UIAction, C : UIStateChange, S : UIState, M : U
             )
                 .distinctUntilChanged()
                 .flatMapConcat { change ->
-                    Timber.e("Change received: [$change]")
                     flow {
                         emit(reducer.reduce(state, change).also { this@BaseViewModel.state = it })
                     }
@@ -92,7 +90,6 @@ abstract class BaseViewModel<A : UIAction, C : UIStateChange, S : UIState, M : U
                 .distinctUntilChanged()
                 .catch { e -> Timber.e(e) }
                 .collectLatest {
-                    Timber.e("New model: [$it]")
                     viewModelScope.launch { modelLiveData.value = it }
                 }
         }
