@@ -3,3 +3,9 @@ Demo version of an Android application whose sole purpose is to search gifs usin
 
 # Preview
 ![](https://github.com/xzhorikx/GifSearch/blob/main/gif-loader.gif)
+
+# Running the code
+Make sure to set your GIPHY api key in `app/build.gradle` file
+```
+def configGiphyApiKey = "\"ENTER_YOUR_GIPHY_KEY_HERE\"" // <----
+```
